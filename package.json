@@ -9,9 +9,10 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
+    "prebuild": "npm run clean",
     "build": "tsc --build tsconfig.build.json",
     "check": "gts check",
-    "clean": "gts clean",
+    "clean": "rimraf lib",
     "fix": "gts fix"
   },
   "keywords": [
@@ -45,6 +46,7 @@
     "gts": "1.1.2",
     "jest": "25.1.0",
     "node-fetch": "2.6.0",
+    "rimraf": "3.0.1",
     "ts-jest": "25.2.0",
     "tsconfigs": "4.0.2",
     "typescript": "3.7.5"
