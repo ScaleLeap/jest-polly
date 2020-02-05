@@ -30,7 +30,7 @@
     "email": "roman@scaleleap.com",
     "url": "https://www.scaleleap.com/"
   },
-  "homepage": "https://github.com/ScaleLeap/amazon-marketplaces#readme",
+  "homepage": "https://github.com/ScaleLeap/jest-polly#readme",
   "license": "MIT",
   "devDependencies": {
     "@jedmao/semantic-release-npm-github-config": "1.0.9",
