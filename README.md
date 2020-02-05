@@ -18,7 +18,7 @@ Integrate Jest with PollyJS for a smooth experience of HTTP recording.
 
 ### Code Demo
 
-### Use in all tests
+#### Use in all tests
 
 In your `package.json`
 
@@ -38,7 +38,7 @@ module.exports = {
 };
 ```
 
-### Use in a single test
+#### Use in a single test
 
 In `my.test.js`
 
@@ -52,7 +52,7 @@ test('is ok', async () => {
 });
 ```
 
-### Using the Polly instance
+#### Using the Polly instance
 
 Use the `polly` instance to change default behavior. Read [docs](https://netflix.github.io/pollyjs/#/api).
 
@@ -72,7 +72,7 @@ test('is not ok', async () => {
 });
 ```
 
-### Change the Polly default config
+#### Change the Polly default config
 
 If you want to change the default config, use the following setter. Note that the config will
 be **merged** with the default config.
