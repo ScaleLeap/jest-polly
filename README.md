@@ -1,4 +1,4 @@
-![](./docs/assets/logo.png)
+![](https://raw.githubusercontent.com/ScaleLeap/jest-polly/master/docs/assets/logo.png)
 
 @scaleleap/jest-polly
 =======================================
