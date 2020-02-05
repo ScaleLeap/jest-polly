@@ -3,15 +3,15 @@
 @scaleleap/jest-polly
 =======================================
 
-> Smoothest [Jest](https://github.com/facebook/jest) integration with [PollyJS](https://github.com/Netflix/pollyjs/).
+> Smoothest Jest integration with PollyJS.
 
 * * *
 
-Integrate Jest with PollyJS for a smooth experience of HTTP recording.
+Integrate [Jest](https://github.com/facebook/jest) with [PollyJS](https://github.com/Netflix/pollyjs/). for a smooth experience of HTTP recording and playback for your tests.
 
 ### List of features
 
- * Sane default [configuration](./src/config.ts)
+ * Sane default [configuration](./src/config.ts#L16)
  * TypeScript support
 
 ### Polly Mode
@@ -86,11 +86,11 @@ test('is not ok', async () => {
 });
 ```
 
-#### Change the Polly default config
+#### Change PollyJS default config
 
-If you want to change the default config, use the following setter.
+If you want to change the [default config](./src/config.ts#L16), use the following setter.
 
-**Note**: the config will be **merged** with the default config.
+**Note**: the config will be **merged** with the default config, and **not** overwritten.
 
 ```ts
 import { jestPollyConfigService } from '@scaleleap/jest-polly';
@@ -104,7 +104,7 @@ jestPollyConfigService.config = {
 
 ### Download & Installation
 
-```shell
+```sh
 $ npm i @scaleleap/jest-polly
 ```
 
