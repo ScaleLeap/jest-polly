@@ -8,7 +8,6 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "lint": "xo",
     "test": "jest",
     "build": "tsc"
   },
@@ -40,15 +39,11 @@
     "@types/pollyjs__core": "4.0.0",
     "@types/pollyjs__persister-fs": "2.0.0",
     "@types/setup-polly-jest": "0.5.0",
-    "@typescript-eslint/eslint-plugin": "2.19.0",
-    "@typescript-eslint/parser": "2.19.0",
-    "eslint-config-xo-typescript": "0.26.0",
     "jest": "25.1.0",
     "node-fetch": "2.6.0",
     "ts-jest": "25.2.0",
     "tsconfigs": "4.0.2",
-    "typescript": "3.7.5",
-    "xo": "0.25.3"
+    "typescript": "3.7.5"
   },
   "dependencies": {
     "@pollyjs/adapter-node-http": "4.0.3",
@@ -57,25 +52,6 @@
     "ci-info": "2.0.0",
     "lodash.merge": "4.6.2",
     "setup-polly-jest": "0.6.0"
-  },
-  "xo": {
-    "extends": "xo-typescript",
-    "extensions": [
-      "ts"
-    ],
-    "envs": [
-      "node",
-      "jest"
-    ],
-    "space": true,
-    "semicolon": false,
-    "prettier": false,
-    "rules": {
-      "object-curly-spacing": [
-        "error",
-        "always"
-      ]
-    }
   },
   "release": {
     "extends": "@jedmao/semantic-release-npm-github-config",
