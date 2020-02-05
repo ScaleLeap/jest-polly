@@ -9,7 +9,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc",
+    "build": "tsc --build tsconfig.build.json",
     "check": "gts check",
     "clean": "gts clean",
     "fix": "gts fix"
