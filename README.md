@@ -52,7 +52,7 @@ test('is ok', async () => {
 
 #### Using the Polly instance
 
-Use the `polly` instance to change default behavior. Read [docs](https://netflix.github.io/pollyjs/#/api).
+Use the [`polly` instance](https://netflix.github.io/pollyjs/#/api) to change default behavior.
 
 ```ts
 import { jestPollyContext } from '@scaleleap/jest-polly';
