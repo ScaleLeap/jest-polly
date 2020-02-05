@@ -14,6 +14,22 @@ Integrate Jest with PollyJS for a smooth experience of HTTP recording.
  * Sane default [configuration](./src/config.ts)
  * TypeScript support
 
+### Polly Mode
+
+The [Polly mode](https://netflix.github.io/pollyjs/#/configuration?id=mode) can be set via `POLLY_MODE` environment variable.
+
+Mode can be one of the following:
+
+ * `replay`: Replay responses from recordings.
+ * `record`: Force Polly to record all requests. This will overwrite recordings that already exist.
+ * `passthrough`: Passes all requests through directly to the server without recording or replaying.
+
+Usage:
+
+```sh
+POLLY_MODE=record npm t
+```
+
 ### Code Demo
 
 #### Use in all tests
