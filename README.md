@@ -72,8 +72,9 @@ test('is not ok', async () => {
 
 #### Change the Polly default config
 
-If you want to change the default config, use the following setter. Note that the config will
-be **merged** with the default config.
+If you want to change the default config, use the following setter.
+
+**Note**: the config will be **merged** with the default config.
 
 ```ts
 import { jestPollyConfigService } from '@scaleleap/jest-polly';
