@@ -45,7 +45,7 @@ import '@scaleleap/jest-polly';
 import fetch from 'node-fetch';
 
 test('is ok', async () => {
-  const response = await fetch('https://www.google.com/', { method: 'HEAD' });
+  const response = await fetch('https://httpstat.us/200');
   expect(response.ok).toBe(true);
 });
 ```
@@ -61,11 +61,11 @@ import fetch from 'node-fetch';
 jestPollyContext
   .polly
   .server
-  .any('https://www.google.com/')
+  .any('https://httpstat.us/500')
   .intercept((req, res) => res.sendStatus(500));
 
 test('is not ok', async () => {
-  const response = await fetch('https://www.google.com/', { method: 'HEAD' });
+  const response = await fetch('https://httpstat.us/500');
   expect(response.ok).not.toBe(true);
 });
 ```
