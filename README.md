@@ -1,6 +1,4 @@
-<img height="200" src="https://raw.githubusercontent.com/Netflix/pollyjs/master/docs/assets/images/logo.png">
-<span style="font-size: 200px;">+</span>
-<img height="200" src="https://raw.githubusercontent.com/facebook/jest/master/website/static/img/jest.png">
+![](./docs/assets/logo.png)
 
 @scaleleap/jest-polly
 =======================================
