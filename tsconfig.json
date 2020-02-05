@@ -3,11 +3,4 @@
   "compilerOptions": {
     "outDir": "lib"
   },
-  "include": [
-    "./src/**.ts",
-    "./src/global.d.ts"
-  ],
-  "exclude": [
-    "./src/**.test.ts"
-  ]
 }
