@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/ScaleLeap/jest-polly/compare/v1.0.2...v1.0.3) (2020-02-05)
+
+
+### Bug Fixes
+
+* removes test files from compiled results ([3f90872](https://github.com/ScaleLeap/jest-polly/commit/3f90872d5e0064e666944cecba52eae90326b009))
+
 ## [1.0.2](https://github.com/ScaleLeap/jest-polly/compare/v1.0.1...v1.0.2) (2020-02-05)
 
 
