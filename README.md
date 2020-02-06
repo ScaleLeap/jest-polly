@@ -114,7 +114,7 @@ Keep it simple. Keep it minimal. Don't put every single feature just because you
 
 ### Authors or Acknowledgments
 
-* Authored by Roman Filippov ([Scale Leap](https://www.scaleleap.com)
+* Authored by Roman Filippov ([Scale Leap](https://www.scaleleap.com))
 * Inspired by [`@spotify/polly-jest-presets`](https://github.com/spotify/polly-jest-presets), but the project wasn't well maintained
 * Inspired by [`@jomaxx/jest-polly`](https://github.com/jomaxx/jest-polly), but wasn't using `setup-polly-jest`
 
