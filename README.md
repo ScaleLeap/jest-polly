@@ -14,13 +14,15 @@ Integrate [Jest](https://github.com/facebook/jest) with [PollyJS](https://github
  * Sane default [configuration](./src/config.ts#L16)
  * TypeScript support
 
-### Polly Mode
+### Environment Variables
 
-The [Polly mode](https://netflix.github.io/pollyjs/#/configuration?id=mode) can be set via `POLLY_MODE` environment variable.
+#### [Polly Mode](https://netflix.github.io/pollyjs/#/configuration?id=mode)
+
+Can be set via `POLLY_MODE` environment variable.
 
 Mode can be one of the following:
 
- * `replay`: Replay responses from recordings.
+ * `replay` (*default*): Replay responses from recordings.
  * `record`: Force Polly to record all requests. This will overwrite recordings that already exist.
  * `passthrough`: Passes all requests through directly to the server without recording or replaying.
 
@@ -28,6 +30,20 @@ Usage:
 
 ```sh
 POLLY_MODE=record npm t
+```
+
+#### [Record if Missing](https://netflix.github.io/pollyjs/#/configuration?id=recordifmissing)
+
+If a request's recording is not found, pass-through to the server and record the response.
+
+Can be set via `POLLY_RECORD_IF_MISSING` environment variable.
+
+Default: `false`
+
+Usage:
+
+```sh
+POLLY_RECORD_IF_MISSING=true npm t
 ```
 
 ### Code Demo

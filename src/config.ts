@@ -12,14 +12,17 @@ class Config extends BaseConfig {
   readonly POLLY_MODE = this.get('POLLY_MODE', POLLY_MODES[0]).asEnum(
     POLLY_MODES,
   ) as MODE
+
+  readonly POLLY_RECORD_IF_MISSING = this.get(
+    'POLLY_RECORD_IF_MISSING',
+    isCI ? 'false' : 'true',
+  ).asBoolStrict()
 }
 
 const config = new Config()
 
 const recordingsRoot = dirname(global.jasmine.testPath)
 const recordingsDir = join(recordingsRoot, '__recordings__')
-
-const recordIfMissing = !isCI
 
 const DEFAULT_POLLY_CONFIG: PollyConfig = {
   adapters: [NodeHttpAdapter],
@@ -31,7 +34,7 @@ const DEFAULT_POLLY_CONFIG: PollyConfig = {
     },
   },
   mode: config.POLLY_MODE,
-  recordIfMissing,
+  recordIfMissing: config.POLLY_RECORD_IF_MISSING,
   recordFailedRequests: true,
   matchRequestsBy: {
     headers: false,
