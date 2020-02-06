@@ -1,12 +1,18 @@
 import { dirname, join } from 'path'
 import { isCI } from 'ci-info'
+import { BaseConfig } from '@scaleleap/config'
 import { PollyConfig, MODE } from '@pollyjs/core'
 import FSPersister from '@pollyjs/persister-fs'
 import NodeHttpAdapter from '@pollyjs/adapter-node-http'
 import merge from 'lodash.merge'
 
-const DEFAULT_POLLY_MODE: MODE = 'replay'
-const mode = process.env.POLLY_MODE || DEFAULT_POLLY_MODE
+const POLLY_MODES: MODE[] = ['replay', 'record', 'passthrough', 'stopped']
+
+class Config extends BaseConfig {
+  public readonly POLLY_MODE = this.get('POLLY_MODE', POLLY_MODES[0]).asEnum(POLLY_MODES) as MODE
+}
+
+const config = new Config()
 
 const recordingsRoot = dirname(global.jasmine.testPath)
 const recordingsDir = join(recordingsRoot, '__recordings__')
@@ -22,7 +28,7 @@ const DEFAULT_POLLY_CONFIG: PollyConfig = {
       recordingsDir,
     },
   },
-  mode,
+  mode: config.POLLY_MODE,
   recordIfMissing,
   recordFailedRequests: true,
   matchRequestsBy: {
