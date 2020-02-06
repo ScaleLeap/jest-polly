@@ -7,7 +7,7 @@
 
 * * *
 
-Integrate [Jest](https://github.com/facebook/jest) with [PollyJS](https://github.com/Netflix/pollyjs/). for a smooth experience of HTTP recording and playback for your tests.
+Integrate [Jest](https://github.com/facebook/jest) with [PollyJS](https://github.com/Netflix/pollyjs/) for a smooth HTTP recording and playback experience for your integration tests.
 
 ### List of features
 
