@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/ScaleLeap/jest-polly/compare/v1.0.5...v1.1.0) (2020-02-06)
+
+
+### Features
+
+* adds POLLY_MODE env value validation ([55d2803](https://github.com/ScaleLeap/jest-polly/commit/55d28035e4f9f59f9696b237ffcb9fcad51e24d5))
+
 ## [1.0.5](https://github.com/ScaleLeap/jest-polly/compare/v1.0.4...v1.0.5) (2020-02-06)
 
 
