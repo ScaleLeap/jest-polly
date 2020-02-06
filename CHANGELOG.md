@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/ScaleLeap/jest-polly/compare/v1.2.0...v1.2.1) (2020-02-06)
+
+
+### Bug Fixes
+
+* moves some of the deps we need in prod ([41ae681](https://github.com/ScaleLeap/jest-polly/commit/41ae681906184534f6dd55f7a40ec61bdab9f7c6))
+
 # [1.2.0](https://github.com/ScaleLeap/jest-polly/compare/v1.1.0...v1.2.0) (2020-02-06)
 
 
