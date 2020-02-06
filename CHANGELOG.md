@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/ScaleLeap/jest-polly/compare/v1.1.0...v1.2.0) (2020-02-06)
+
+
+### Features
+
+* adds Record if Missing configuration via env ([ec12005](https://github.com/ScaleLeap/jest-polly/commit/ec120058d4025299103645ca533a854fcf51b647))
+
 # [1.1.0](https://github.com/ScaleLeap/jest-polly/compare/v1.0.5...v1.1.0) (2020-02-06)
 
 
