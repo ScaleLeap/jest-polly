@@ -9,7 +9,9 @@ import merge from 'lodash.merge'
 const POLLY_MODES: MODE[] = ['replay', 'record', 'passthrough', 'stopped']
 
 class Config extends BaseConfig {
-  public readonly POLLY_MODE = this.get('POLLY_MODE', POLLY_MODES[0]).asEnum(POLLY_MODES) as MODE
+  readonly POLLY_MODE = this.get('POLLY_MODE', POLLY_MODES[0]).asEnum(
+    POLLY_MODES,
+  ) as MODE
 }
 
 const config = new Config()
