@@ -7,6 +7,11 @@ import { jestPollyConfigService } from './config'
 Polly.register(NodeHttpAdapter)
 Polly.register(FSPersister)
 
-export const jestPollyContext = setupPolly(jestPollyConfigService.config)
+// first we instantiate a Polly instance with default configuration
+export const jestPollyContext = setupPolly()
+
+// and then before each test run, we'll update it with actual configuration, because
+// some of the configuration, depends on being inside a test
+beforeEach(() => jestPollyContext.polly.configure(jestPollyConfigService.config))
 
 afterEach(() => jestPollyContext.polly.flush())
