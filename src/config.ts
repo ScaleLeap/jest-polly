@@ -11,7 +11,7 @@ export class JestPollyConfigService {
   /**
    * Factory method is used to invoke config generation, because `global.jasmine` object is
    * only available inside a test or lifecycle methods (before, after).
-  */
+   */
   private factory(): PollyConfig {
     const recordingsRoot = dirname(global.jasmine.testPath)
     const recordingsDir = join(recordingsRoot, '__recordings__')

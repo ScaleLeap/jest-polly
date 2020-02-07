@@ -12,6 +12,8 @@ export const jestPollyContext = setupPolly()
 
 // and then before each test run, we'll update it with actual configuration, because
 // some of the configuration, depends on being inside a test
-beforeEach(() => jestPollyContext.polly.configure(jestPollyConfigService.config))
+beforeEach(() =>
+  jestPollyContext.polly.configure(jestPollyConfigService.config),
+)
 
 afterEach(() => jestPollyContext.polly.flush())
