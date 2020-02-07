@@ -1,25 +1,9 @@
 import { dirname, join } from 'path'
-import { isCI } from 'ci-info'
-import { BaseConfig } from '@scaleleap/config'
-import { PollyConfig, MODE } from '@pollyjs/core'
+import { PollyConfig } from '@pollyjs/core'
 import FSPersister from '@pollyjs/persister-fs'
 import NodeHttpAdapter from '@pollyjs/adapter-node-http'
 import merge from 'lodash.merge'
-
-const POLLY_MODES: MODE[] = ['replay', 'record', 'passthrough', 'stopped']
-
-class Config extends BaseConfig {
-  readonly POLLY_MODE = this.get('POLLY_MODE', POLLY_MODES[0]).asEnum(
-    POLLY_MODES,
-  ) as MODE
-
-  readonly POLLY_RECORD_IF_MISSING = this.get(
-    'POLLY_RECORD_IF_MISSING',
-    isCI ? 'false' : 'true',
-  ).asBoolStrict()
-}
-
-const config = new Config()
+import { env } from './env'
 
 export class JestPollyConfigService {
   private _config!: PollyConfig
@@ -41,8 +25,8 @@ export class JestPollyConfigService {
           recordingsDir,
         },
       },
-      mode: config.POLLY_MODE,
-      recordIfMissing: config.POLLY_RECORD_IF_MISSING,
+      mode: env.POLLY_MODE,
+      recordIfMissing: env.POLLY_RECORD_IF_MISSING,
       recordFailedRequests: true,
       matchRequestsBy: {
         headers: false,
