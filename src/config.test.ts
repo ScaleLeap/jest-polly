@@ -1,4 +1,7 @@
 import { JestPollyConfigService, jestPollyConfigService } from './config'
+import { resolve } from 'path'
+import fetch from 'node-fetch'
+import './jest-polly'
 
 describe(JestPollyConfigService.name, () => {
   it('should export a singleton', () => {
@@ -30,5 +33,22 @@ describe(JestPollyConfigService.name, () => {
       expect(svc.config.matchRequestsBy.order).toBe(false)
       expect(svc.config.matchRequestsBy.headers).toBe(false)
     }
+  })
+})
+
+describe(JestPollyConfigService.name, () => {
+  beforeAll(() => {
+    jestPollyConfigService.config = {
+      persisterOptions: {
+        fs: {
+          recordingsDir: resolve(__dirname, '__foo__'),
+        },
+      },
+    }
+  })
+
+  it('updates config in flight', async () => {
+    const response = await fetch('https://httpstat.us/200')
+    expect(response.ok).toBeTruthy()
   })
 })
