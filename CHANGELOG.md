@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/ScaleLeap/jest-polly/compare/v1.2.2...v1.2.3) (2020-02-12)
+
+
+### Bug Fixes
+
+* fixes type exporting issue ([50ff1b5](https://github.com/ScaleLeap/jest-polly/commit/50ff1b543b34d7524e9bb2d8ecb78143f81bce40))
+
 ## [1.2.2](https://github.com/ScaleLeap/jest-polly/compare/v1.2.1...v1.2.2) (2020-02-07)
 
 
