@@ -37,7 +37,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@jedmao/semantic-release-npm-github-config": "1.0.9",
+    "@scaleleap/semantic-release-config": "1.0.2",
     "@types/ci-info": "2.0.0",
     "@types/jest": "25.1.1",
     "@types/lodash.merge": "4.6.6",
@@ -65,7 +65,7 @@
     "setup-polly-jest": "0.6.0"
   },
   "release": {
-    "extends": "@jedmao/semantic-release-npm-github-config",
+    "extends": "@scaleleap/semantic-release-config",
     "branch": "master"
   }
 }
