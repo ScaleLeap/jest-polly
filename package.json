@@ -52,9 +52,9 @@
     "typescript": "3.8.3"
   },
   "dependencies": {
-    "@pollyjs/adapter-node-http": "4.0.3",
-    "@pollyjs/core": "4.0.2",
-    "@pollyjs/persister-fs": "4.0.2",
+    "@pollyjs/adapter-node-http": "4.0.4",
+    "@pollyjs/core": "4.0.4",
+    "@pollyjs/persister-fs": "4.0.4",
     "@scaleleap/config": "1.5.0",
     "@types/pollyjs__adapter-node-http": "2.0.0",
     "@types/pollyjs__core": "4.0.0",
