@@ -3,6 +3,13 @@
           All notable changes to this project will be documented in this file.
           See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/ScaleLeap/jest-polly/compare/v1.3.0...v1.3.1) (2020-04-04)
+
+
+### Bug Fixes
+
+* guards content.mimeType.includes ([ff86fcd](https://github.com/ScaleLeap/jest-polly/commit/ff86fcddf399a3278ae0eb77b3e550ecb3c3a928))
+
 # [1.3.0](https://github.com/ScaleLeap/jest-polly/compare/v1.2.3...v1.3.0) (2020-04-04)
 
 
