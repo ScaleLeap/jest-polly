@@ -1,5 +1,22 @@
 # Changelog
 
+          All notable changes to this project will be documented in this file.
+          See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [1.3.0](https://github.com/ScaleLeap/jest-polly/compare/v1.2.3...v1.3.0) (2020-04-04)
+
+
+### Bug Fixes
+
+* npm audit ([144cbb6](https://github.com/ScaleLeap/jest-polly/commit/144cbb6f407b98c2882862ce15be854252a59260))
+
+
+### Features
+
+* inflates JSON mime types to JSON objects for store ([7ac70ea](https://github.com/ScaleLeap/jest-polly/commit/7ac70eaf7cb39da491cc3ddc39955d9c998950c5))
+
+# Changelog
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
