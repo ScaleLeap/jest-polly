@@ -22,9 +22,11 @@ Can be set via `POLLY_MODE` environment variable.
 
 Mode can be one of the following:
 
- * `replay` (*default*): Replay responses from recordings.
+ * `replay`: Replay responses from recordings.
  * `record`: Force Polly to record all requests. This will overwrite recordings that already exist.
  * `passthrough`: Passes all requests through directly to the server without recording or replaying.
+
+**Default**: `replay`
 
 Usage:
 
@@ -38,7 +40,7 @@ If a request's recording is not found, pass-through to the server and record the
 
 Can be set via `POLLY_RECORD_IF_MISSING` environment variable.
 
-Default: `false`
+**Default**: `false` if running in CI environment or `true` otherwise.
 
 Usage:
 
