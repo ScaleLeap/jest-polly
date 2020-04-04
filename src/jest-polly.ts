@@ -15,7 +15,11 @@ Polly.on('create', polly => {
     .on('beforePersist', (req, recording) => {
       const { content } = recording.response
 
-      if (content.mimeType.includes('application/json')) {
+      if (
+        content &&
+        content.mimeType &&
+        content.mimeType.includes('application/json')
+      ) {
         try {
           content.text = JSON.parse(content.text)
         } catch (e) {
@@ -26,7 +30,11 @@ Polly.on('create', polly => {
     .on('beforeReplay', (req, recording) => {
       const { content } = recording.response
 
-      if (content.mimeType.includes('application/json')) {
+      if (
+        content &&
+        content.mimeType &&
+        content.mimeType.includes('application/json')
+      ) {
         try {
           content.text = JSON.stringify(content.text)
         } catch (e) {
@@ -49,6 +57,8 @@ export const jestPollyContext: JestPollyContext = setupPolly()
 
 // and then before each test run, we'll update it with actual configuration, because
 // some of the configuration, depends on being inside a test
-beforeEach(() => jestPollyContext.polly.configure(jestPollyConfigService.config))
+beforeEach(() =>
+  jestPollyContext.polly.configure(jestPollyConfigService.config),
+)
 
 afterEach(() => jestPollyContext.polly.flush())
