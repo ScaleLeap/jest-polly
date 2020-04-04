@@ -1,30 +1,7 @@
 {
   "name": "@scaleleap/jest-polly",
-  "version": "1.3.0",
-  "publishConfig": {
-    "access": "public"
-  },
   "description": "Integrate Jest with PollyJS for a smooth experience of HTTP recording.",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "test": "jest src",
-    "prebuild": "npm run clean",
-    "build": "tsc --build tsconfig.build.json",
-    "check": "gts check",
-    "clean": "rimraf lib",
-    "fix": "gts fix"
-  },
-  "keywords": [
-    "jest",
-    "polly",
-    "pollyjs",
-    "http",
-    "fetch",
-    "record",
-    "replay",
-    "snapshot"
-  ],
+  "license": "MIT",
   "author": {
     "name": "Roman Filippov",
     "email": "roman@scaleleap.com",
@@ -35,7 +12,30 @@
     "type": "git",
     "url": "git@github.com:ScaleLeap/jest-polly.git"
   },
-  "license": "MIT",
+  "version": "1.3.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "tsc --build tsconfig.build.json",
+    "check": "gts check",
+    "clean": "rimraf lib",
+    "fix": "gts fix",
+    "test": "jest src"
+  },
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "@pollyjs/adapter-node-http": "4.0.4",
+    "@pollyjs/core": "4.0.4",
+    "@pollyjs/persister-fs": "4.0.4",
+    "@scaleleap/config": "1.5.0",
+    "@types/pollyjs__adapter-node-http": "2.0.0",
+    "@types/pollyjs__core": "4.0.0",
+    "@types/pollyjs__persister-fs": "2.0.0",
+    "@types/setup-polly-jest": "0.5.0",
+    "ci-info": "2.0.0",
+    "lodash.merge": "4.6.2",
+    "setup-polly-jest": "0.7.0"
+  },
   "devDependencies": {
     "@scaleleap/semantic-release-config": "1.0.2",
     "@types/ci-info": "2.0.0",
@@ -51,18 +51,18 @@
     "tsconfigs": "4.0.2",
     "typescript": "3.8.3"
   },
-  "dependencies": {
-    "@pollyjs/adapter-node-http": "4.0.4",
-    "@pollyjs/core": "4.0.4",
-    "@pollyjs/persister-fs": "4.0.4",
-    "@scaleleap/config": "1.5.0",
-    "@types/pollyjs__adapter-node-http": "2.0.0",
-    "@types/pollyjs__core": "4.0.0",
-    "@types/pollyjs__persister-fs": "2.0.0",
-    "@types/setup-polly-jest": "0.5.0",
-    "ci-info": "2.0.0",
-    "lodash.merge": "4.6.2",
-    "setup-polly-jest": "0.7.0"
+  "keywords": [
+    "fetch",
+    "http",
+    "jest",
+    "polly",
+    "pollyjs",
+    "record",
+    "replay",
+    "snapshot"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "release": {
     "extends": "@scaleleap/semantic-release-config",
