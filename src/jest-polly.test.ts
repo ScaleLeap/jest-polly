@@ -38,7 +38,7 @@ const destroyServer = (server: Server) =>
       .once('close', resolve)
   })
 
-test('replays recording', async done => {
+test('replays recording', async () => {
   expect.assertions(1)
 
   const RESPONSE = 'Hello World!'
@@ -49,14 +49,11 @@ test('replays recording', async done => {
   await fetchMessage()
 
   // Go offline
-  server.close().once('close', async () => {
-    // Replays recording
-    const message = await fetchMessage()
-    expect(message).toBe(RESPONSE)
-    done()
-  })
-
   await destroyServer(server)
+
+  // Replays recording
+  const message = await fetchMessage()
+  expect(message).toBe(RESPONSE)
 })
 
 async function fetchMessage() {
