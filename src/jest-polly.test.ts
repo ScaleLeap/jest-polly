@@ -12,15 +12,13 @@ import http from 'http'
 import fetch from 'node-fetch'
 import './jest-polly'
 
-const RESPONSE = 'Hello World!'
-
 type Server = ReturnType<typeof http.createServer>
 
-const createServer = () =>
+const createServer = (response: string, contentType = 'text/plain') =>
   new Promise<Server>((resolve, reject) => {
     const server = http.createServer((_req, res) => {
-      res.writeHead(200, { 'Content-Type': 'text/plain' })
-      res.write(RESPONSE)
+      res.writeHead(200, { 'Content-Type': contentType })
+      res.write(response)
       res.end()
     })
 
@@ -40,16 +38,12 @@ const destroyServer = (server: Server) =>
       .once('close', resolve)
   })
 
-let server: Server
-
-beforeEach(async () => {
-  server = await createServer()
-})
-
-afterEach(() => destroyServer(server))
-
 test('replays recording', async done => {
   expect.assertions(1)
+
+  const RESPONSE = 'Hello World!'
+
+  const server = await createServer(RESPONSE)
 
   // Records if missing
   await fetchMessage()
@@ -61,6 +55,8 @@ test('replays recording', async done => {
     expect(message).toBe(RESPONSE)
     done()
   })
+
+  await destroyServer(server)
 })
 
 async function fetchMessage() {
