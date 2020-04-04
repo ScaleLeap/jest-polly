@@ -39,7 +39,7 @@
   "devDependencies": {
     "@scaleleap/semantic-release-config": "1.0.2",
     "@types/ci-info": "2.0.0",
-    "@types/jest": "25.1.1",
+    "@types/jest": "25.2.1",
     "@types/lodash.merge": "4.6.6",
     "@types/node": "13.7.0",
     "@types/node-fetch": "2.5.4",
