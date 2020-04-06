@@ -3,6 +3,14 @@
           All notable changes to this project will be documented in this file.
           See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/ScaleLeap/jest-polly/compare/v1.3.1...v1.3.2) (2020-04-06)
+
+
+### Bug Fixes
+
+* old recordings to replay correctly ([a85f984](https://github.com/ScaleLeap/jest-polly/commit/a85f98476dec04a16ae5af52b1a27b407126970c))
+* semantic-release run script name ([27dad0c](https://github.com/ScaleLeap/jest-polly/commit/27dad0c1e91105c9e0c26cc640bb51c2ae7aea55))
+
 ## [1.3.1](https://github.com/ScaleLeap/jest-polly/compare/v1.3.0...v1.3.1) (2020-04-04)
 
 
