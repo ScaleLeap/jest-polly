@@ -36,7 +36,10 @@ Polly.on('create', polly => {
         content.mimeType.includes('application/json')
       ) {
         try {
-          content.text = JSON.stringify(content.text)
+          // allows older-style recordings to exist which had JSON stringified
+          if (content && content.text && typeof content.text !== 'string') {
+            content.text = JSON.stringify(content.text)
+          }
         } catch (e) {
           // noop
         }

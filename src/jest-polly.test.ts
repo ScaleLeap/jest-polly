@@ -74,6 +74,24 @@ test('expands JSON response to JSON object', async () => {
   expect(message).toBe(RESPONSE)
 })
 
+test('does not expand previously stringified JSON response', async () => {
+  expect.assertions(1)
+
+  const RESPONSE = JSON.stringify({ a: true })
+
+  const server = await createServer(RESPONSE, 'application/json')
+
+  // Records if missing
+  await fetchMessage()
+
+  // Go offline
+  await destroyServer(server)
+
+  // Replays recording
+  const message = await fetchMessage()
+  expect(message).toBe(RESPONSE)
+})
+
 async function fetchMessage() {
   const response = await fetch('http://localhost:8080')
   return response.text()
