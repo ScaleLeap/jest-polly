@@ -20,7 +20,7 @@
     "check": "gts check",
     "clean": "rimraf lib",
     "fix": "gts fix",
-    "release": "semantic-release",
+    "semantic-release": "semantic-release",
     "test": "jest src"
   },
   "types": "lib/index.d.ts",
