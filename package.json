@@ -45,7 +45,7 @@
     "@types/node": "13.7.0",
     "@types/node-fetch": "2.5.4",
     "gts": "1.1.2",
-    "jest": "25.2.7",
+    "jest": "25.3.0",
     "node-fetch": "2.6.0",
     "rimraf": "3.0.1",
     "ts-jest": "25.3.1",
