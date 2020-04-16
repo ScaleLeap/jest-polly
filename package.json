@@ -38,7 +38,7 @@
     "setup-polly-jest": "0.7.0"
   },
   "devDependencies": {
-    "@scaleleap/semantic-release-config": "1.1.4",
+    "@scaleleap/semantic-release-config": "1.1.5",
     "@types/ci-info": "2.0.0",
     "@types/jest": "25.2.1",
     "@types/lodash.merge": "4.6.6",
