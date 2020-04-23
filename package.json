@@ -26,7 +26,7 @@
   "types": "lib/index.d.ts",
   "dependencies": {
     "@pollyjs/adapter-node-http": "4.1.0",
-    "@pollyjs/core": "4.0.4",
+    "@pollyjs/core": "4.1.0",
     "@pollyjs/persister-fs": "4.1.0",
     "@scaleleap/config": "1.5.0",
     "@types/pollyjs__adapter-node-http": "2.0.0",
