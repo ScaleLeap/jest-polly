@@ -28,7 +28,6 @@
     "@pollyjs/adapter-node-http": "4.1.0",
     "@pollyjs/core": "4.1.0",
     "@pollyjs/persister-fs": "4.1.0",
-    "@scaleleap/config": "1.5.1",
     "@types/pollyjs__adapter-node-http": "2.0.0",
     "@types/pollyjs__core": "4.0.0",
     "@types/pollyjs__persister-fs": "2.0.0",
@@ -38,6 +37,7 @@
     "setup-polly-jest": "0.7.0"
   },
   "devDependencies": {
+    "@scaleleap/config": "1.5.1",
     "@scaleleap/semantic-release-config": "1.1.6",
     "@types/ci-info": "2.0.0",
     "@types/jest": "25.2.1",
@@ -51,6 +51,9 @@
     "ts-jest": "25.4.0",
     "tsconfigs": "4.0.2",
     "typescript": "3.8.3"
+  },
+  "peerDependencies": {
+    "@scaleleap/config": "^1.5.1"
   },
   "keywords": [
     "fetch",
