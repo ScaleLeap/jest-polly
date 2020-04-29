@@ -1,5 +1,10 @@
 // Disable order checking for tests, so that the second
 // request has a chance to match against the first request
+import './jest-polly'
+
+import http from 'http'
+import fetch from 'node-fetch'
+
 import { jestPollyConfigService } from './config'
 
 jestPollyConfigService.config = {
@@ -8,18 +13,14 @@ jestPollyConfigService.config = {
   },
 }
 
-import http from 'http'
-import fetch from 'node-fetch'
-import './jest-polly'
-
 type Server = ReturnType<typeof http.createServer>
 
 const createServer = (response: string, contentType = 'text/plain') =>
   new Promise<Server>((resolve, reject) => {
-    const server = http.createServer((_req, res) => {
-      res.writeHead(200, { 'Content-Type': contentType })
-      res.write(response)
-      res.end()
+    const server = http.createServer((_request, response_) => {
+      response_.writeHead(200, { 'Content-Type': contentType })
+      response_.write(response)
+      response_.end()
     })
 
     server
@@ -32,12 +33,15 @@ const createServer = (response: string, contentType = 'text/plain') =>
 
 const destroyServer = (server: Server) =>
   new Promise((resolve, reject) => {
-    return server
-      .close()
-      .once('error', reject)
-      .once('close', resolve)
+    return server.close().once('error', reject).once('close', resolve)
   })
 
+async function fetchMessage() {
+  const response = await fetch('http://localhost:8080')
+  return response.text()
+}
+
+// eslint-disable-next-line jest/require-top-level-describe
 test('replays recording', async () => {
   expect.assertions(1)
 
@@ -53,9 +57,11 @@ test('replays recording', async () => {
 
   // Replays recording
   const message = await fetchMessage()
+
   expect(message).toBe(RESPONSE)
 })
 
+// eslint-disable-next-line jest/require-top-level-describe
 test('expands JSON response to JSON object', async () => {
   expect.assertions(1)
 
@@ -71,9 +77,11 @@ test('expands JSON response to JSON object', async () => {
 
   // Replays recording
   const message = await fetchMessage()
+
   expect(message).toBe(RESPONSE)
 })
 
+// eslint-disable-next-line jest/require-top-level-describe, sonarjs/no-identical-functions
 test('does not expand previously stringified JSON response', async () => {
   expect.assertions(1)
 
@@ -89,10 +97,6 @@ test('does not expand previously stringified JSON response', async () => {
 
   // Replays recording
   const message = await fetchMessage()
+
   expect(message).toBe(RESPONSE)
 })
-
-async function fetchMessage() {
-  const response = await fetch('http://localhost:8080')
-  return response.text()
-}
