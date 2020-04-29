@@ -4,9 +4,14 @@ import FSPersister from '@pollyjs/persister-fs'
 import { setupPolly } from 'setup-polly-jest'
 
 import { jestPollyConfigService } from './config'
+import { APPLICATION_JSON_MIME } from './constants'
 
 Polly.register(NodeHttpAdapter)
 Polly.register(FSPersister)
+
+function isJsonMime(text: string) {
+  return text.includes(APPLICATION_JSON_MIME)
+}
 
 // converts JSON responses from text to JSON objects
 // See: https://github.com/Netflix/pollyjs/issues/322
@@ -16,9 +21,19 @@ Polly.on('create', (polly) => {
     .on('beforePersist', (request, recording) => {
       const { content } = recording.response
 
-      if (content && content.mimeType && content.mimeType.includes('application/json')) {
+      if (content && content.mimeType && isJsonMime(content.mimeType)) {
         try {
           content.text = JSON.parse(content.text)
+        } catch (error) {
+          // noop
+        }
+      }
+
+      const { postData } = recording.request
+
+      if (postData && postData.mimeType && isJsonMime(postData.mimeType)) {
+        try {
+          postData.text = JSON.parse(postData.text)
         } catch (error) {
           // noop
         }
@@ -27,11 +42,24 @@ Polly.on('create', (polly) => {
     .on('beforeReplay', (request, recording) => {
       const { content } = recording.response
 
-      if (content && content.mimeType && content.mimeType.includes('application/json')) {
+      if (content && content.mimeType && isJsonMime(content.mimeType)) {
         try {
           // allows older-style recordings to exist which had JSON stringified
           if (content && content.text && typeof content.text !== 'string') {
             content.text = JSON.stringify(content.text)
+          }
+        } catch (error) {
+          // noop
+        }
+      }
+
+      const { postData } = recording.request
+
+      if (postData && postData.mimeType && isJsonMime(postData.mimeType)) {
+        try {
+          // allows older-style recordings to exist which had JSON stringified
+          if (postData && postData.text && typeof postData.text !== 'string') {
+            postData.text = JSON.stringify(postData.text)
           }
         } catch (error) {
           // noop
