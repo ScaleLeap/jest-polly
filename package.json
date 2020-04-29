@@ -25,7 +25,7 @@
   },
   "types": "lib/index.d.ts",
   "dependencies": {
-    "@pollyjs/adapter-node-http": "4.1.0",
+    "@pollyjs/adapter-node-http": "4.2.0",
     "@pollyjs/core": "4.1.0",
     "@pollyjs/persister-fs": "4.1.0",
     "@types/pollyjs__adapter-node-http": "2.0.0",
