@@ -20,7 +20,7 @@
     "clean": "rimraf lib",
     "lint": "npx eslint --ext .js,.ts src/",
     "semantic-release": "semantic-release",
-    "test": "jest src"
+    "test": "jest"
   },
   "types": "lib/index.d.ts",
   "dependencies": {
