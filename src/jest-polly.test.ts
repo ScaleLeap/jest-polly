@@ -6,8 +6,7 @@ import http from 'http'
 import fetch from 'node-fetch'
 
 import { jestPollyConfigService } from './config'
-
-const APPLICATION_JSON_MIME = 'application/json'
+import { APPLICATION_JSON_MIME } from './constants'
 
 jestPollyConfigService.config = {
   matchRequestsBy: {
@@ -117,6 +116,23 @@ describe('jest-polly', () => {
   })
 
   it('expands JSON request body', async () => {
+    expect.assertions(1)
+
+    const server = await createServer('{}')
+
+    await postMessage()
+
+    // Go offline
+    await destroyServer(server)
+
+    // Replays recording
+    const message = await postMessage()
+
+    expect(message).toStrictEqual({})
+  })
+
+  // eslint-disable-next-line sonarjs/no-identical-functions
+  it('expands JSON request to JSON object', async () => {
     expect.assertions(1)
 
     const server = await createServer('{}')
