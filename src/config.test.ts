@@ -1,9 +1,11 @@
-import { JestPollyConfigService, jestPollyConfigService } from './config'
-import { resolve } from 'path'
-import fetch from 'node-fetch'
 import './jest-polly'
 
-describe(JestPollyConfigService.name, () => {
+import fetch from 'node-fetch'
+import { resolve } from 'path'
+
+import { JestPollyConfigService, jestPollyConfigService } from './config'
+
+describe(`${JestPollyConfigService.name}`, () => {
   it('should export a singleton', () => {
     expect.assertions(1)
 
@@ -14,7 +16,8 @@ describe(JestPollyConfigService.name, () => {
     expect.assertions(1)
 
     const svc = new JestPollyConfigService()
-    expect(svc.config.recordFailedRequests).toBeTruthy()
+
+    expect(svc.config.recordFailedRequests).toBe(true)
   })
 
   it('should have a setter method that merges with defaults', () => {
@@ -27,16 +30,13 @@ describe(JestPollyConfigService.name, () => {
       },
     }
 
-    expect(svc.config.recordFailedRequests).toBeTruthy()
-
-    if (svc.config.matchRequestsBy) {
-      expect(svc.config.matchRequestsBy.order).toBe(false)
-      expect(svc.config.matchRequestsBy.headers).toBe(false)
-    }
+    expect(svc.config.recordFailedRequests).not.toBeUndefined()
+    expect(svc.config.matchRequestsBy && svc.config.matchRequestsBy.order).toBe(false)
+    expect(svc.config.matchRequestsBy && svc.config.matchRequestsBy.headers).toBe(false)
   })
 })
 
-describe(JestPollyConfigService.name, () => {
+describe(`${JestPollyConfigService.name}`, () => {
   beforeAll(() => {
     jestPollyConfigService.config = {
       persisterOptions: {
@@ -48,7 +48,10 @@ describe(JestPollyConfigService.name, () => {
   })
 
   it('updates config in flight', async () => {
+    expect.assertions(1)
+
     const response = await fetch('https://httpstat.us/200')
-    expect(response.ok).toBeTruthy()
+
+    expect(response.ok).toBe(true)
   })
 })

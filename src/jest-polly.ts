@@ -1,7 +1,8 @@
+import NodeHttpAdapter from '@pollyjs/adapter-node-http'
 import { Polly } from '@pollyjs/core'
 import FSPersister from '@pollyjs/persister-fs'
-import NodeHttpAdapter from '@pollyjs/adapter-node-http'
 import { setupPolly } from 'setup-polly-jest'
+
 import { jestPollyConfigService } from './config'
 
 Polly.register(NodeHttpAdapter)
@@ -9,38 +10,30 @@ Polly.register(FSPersister)
 
 // converts JSON responses from text to JSON objects
 // See: https://github.com/Netflix/pollyjs/issues/322
-Polly.on('create', polly => {
+Polly.on('create', (polly) => {
   polly.server
     .any()
-    .on('beforePersist', (req, recording) => {
+    .on('beforePersist', (request, recording) => {
       const { content } = recording.response
 
-      if (
-        content &&
-        content.mimeType &&
-        content.mimeType.includes('application/json')
-      ) {
+      if (content && content.mimeType && content.mimeType.includes('application/json')) {
         try {
           content.text = JSON.parse(content.text)
-        } catch (e) {
+        } catch (error) {
           // noop
         }
       }
     })
-    .on('beforeReplay', (req, recording) => {
+    .on('beforeReplay', (request, recording) => {
       const { content } = recording.response
 
-      if (
-        content &&
-        content.mimeType &&
-        content.mimeType.includes('application/json')
-      ) {
+      if (content && content.mimeType && content.mimeType.includes('application/json')) {
         try {
           // allows older-style recordings to exist which had JSON stringified
           if (content && content.text && typeof content.text !== 'string') {
             content.text = JSON.stringify(content.text)
           }
-        } catch (e) {
+        } catch (error) {
           // noop
         }
       }
@@ -60,8 +53,8 @@ export const jestPollyContext: JestPollyContext = setupPolly()
 
 // and then before each test run, we'll update it with actual configuration, because
 // some of the configuration, depends on being inside a test
-beforeEach(() =>
-  jestPollyContext.polly.configure(jestPollyConfigService.config),
-)
+// eslint-disable-next-line jest/require-top-level-describe
+beforeEach(() => jestPollyContext.polly.configure(jestPollyConfigService.config))
 
+// eslint-disable-next-line jest/require-top-level-describe
 afterEach(() => jestPollyContext.polly.flush())
