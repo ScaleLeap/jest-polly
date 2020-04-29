@@ -7,6 +7,8 @@ import fetch from 'node-fetch'
 
 import { jestPollyConfigService } from './config'
 
+const APPLICATION_JSON_MIME = 'application/json'
+
 jestPollyConfigService.config = {
   matchRequestsBy: {
     order: false,
@@ -41,6 +43,20 @@ async function fetchMessage() {
   return response.text()
 }
 
+async function postMessage() {
+  const response = await fetch('http://localhost:8080', {
+    method: 'POST',
+    headers: {
+      'Content-Type': APPLICATION_JSON_MIME,
+    },
+    body: JSON.stringify({
+      a: true,
+    }),
+  })
+
+  return response.json()
+}
+
 describe('jest-polly', () => {
   it('replays recording', async () => {
     expect.assertions(1)
@@ -66,7 +82,7 @@ describe('jest-polly', () => {
 
     const RESPONSE = JSON.stringify({ a: true })
 
-    const server = await createServer(RESPONSE, 'application/json')
+    const server = await createServer(RESPONSE, APPLICATION_JSON_MIME)
 
     // Records if missing
     await fetchMessage()
@@ -86,7 +102,7 @@ describe('jest-polly', () => {
 
     const RESPONSE = JSON.stringify({ a: true })
 
-    const server = await createServer(RESPONSE, 'application/json')
+    const server = await createServer(RESPONSE, APPLICATION_JSON_MIME)
 
     // Records if missing
     await fetchMessage()
@@ -98,5 +114,21 @@ describe('jest-polly', () => {
     const message = await fetchMessage()
 
     expect(message).toBe(RESPONSE)
+  })
+
+  it('expands JSON request body', async () => {
+    expect.assertions(1)
+
+    const server = await createServer('{}')
+
+    await postMessage()
+
+    // Go offline
+    await destroyServer(server)
+
+    // Replays recording
+    const message = await postMessage()
+
+    expect(message).toStrictEqual({})
   })
 })
