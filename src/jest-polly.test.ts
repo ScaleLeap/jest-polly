@@ -41,62 +41,62 @@ async function fetchMessage() {
   return response.text()
 }
 
-// eslint-disable-next-line jest/require-top-level-describe
-test('replays recording', async () => {
-  expect.assertions(1)
+describe('jest-polly', () => {
+  it('replays recording', async () => {
+    expect.assertions(1)
 
-  const RESPONSE = 'Hello World!'
+    const RESPONSE = 'Hello World!'
 
-  const server = await createServer(RESPONSE)
+    const server = await createServer(RESPONSE)
 
-  // Records if missing
-  await fetchMessage()
+    // Records if missing
+    await fetchMessage()
 
-  // Go offline
-  await destroyServer(server)
+    // Go offline
+    await destroyServer(server)
 
-  // Replays recording
-  const message = await fetchMessage()
+    // Replays recording
+    const message = await fetchMessage()
 
-  expect(message).toBe(RESPONSE)
-})
+    expect(message).toBe(RESPONSE)
+  })
 
-// eslint-disable-next-line jest/require-top-level-describe
-test('expands JSON response to JSON object', async () => {
-  expect.assertions(1)
+  it('expands JSON response to JSON object', async () => {
+    expect.assertions(1)
 
-  const RESPONSE = JSON.stringify({ a: true })
+    const RESPONSE = JSON.stringify({ a: true })
 
-  const server = await createServer(RESPONSE, 'application/json')
+    const server = await createServer(RESPONSE, 'application/json')
 
-  // Records if missing
-  await fetchMessage()
+    // Records if missing
+    await fetchMessage()
 
-  // Go offline
-  await destroyServer(server)
+    // Go offline
+    await destroyServer(server)
 
-  // Replays recording
-  const message = await fetchMessage()
+    // Replays recording
+    const message = await fetchMessage()
 
-  expect(message).toBe(RESPONSE)
-})
+    expect(message).toBe(RESPONSE)
+  })
 
-// eslint-disable-next-line jest/require-top-level-describe, sonarjs/no-identical-functions
-test('does not expand previously stringified JSON response', async () => {
-  expect.assertions(1)
+  // eslint-disable-next-line sonarjs/no-identical-functions
+  it('does not expand previously stringified JSON response', async () => {
+    expect.assertions(1)
 
-  const RESPONSE = JSON.stringify({ a: true })
+    const RESPONSE = JSON.stringify({ a: true })
 
-  const server = await createServer(RESPONSE, 'application/json')
+    const server = await createServer(RESPONSE, 'application/json')
 
-  // Records if missing
-  await fetchMessage()
+    // Records if missing
+    await fetchMessage()
 
-  // Go offline
-  await destroyServer(server)
+    // Go offline
+    await destroyServer(server)
 
-  // Replays recording
-  const message = await fetchMessage()
+    // Replays recording
+    const message = await fetchMessage()
 
-  expect(message).toBe(RESPONSE)
+    expect(message).toBe(RESPONSE)
+  })
 })
