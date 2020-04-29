@@ -3,6 +3,25 @@
           All notable changes to this project will be documented in this file.
           See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/ScaleLeap/jest-polly/compare/v1.3.2...v1.4.0) (2020-04-29)
+
+
+### Bug Fixes
+
+* package lock ([63e0f10](https://github.com/ScaleLeap/jest-polly/commit/63e0f101f491d05b6a97ae060f80a67f691b9342))
+* **deps:** update dependency @pollyjs/adapter-node-http to v4.1.0 ([7797c64](https://github.com/ScaleLeap/jest-polly/commit/7797c64306ba6156b54d40c706b9151960f262c1))
+* **deps:** update dependency @pollyjs/adapter-node-http to v4.2.0 ([548b8cf](https://github.com/ScaleLeap/jest-polly/commit/548b8cf17a6e7fe5436c8320a405befb352c8126))
+* **deps:** update dependency @pollyjs/core to v4.1.0 ([9ff6e3a](https://github.com/ScaleLeap/jest-polly/commit/9ff6e3a585b854ce00f035c1ce32125137f27eda))
+* **deps:** update dependency @pollyjs/persister-fs to v4.1.0 ([57f8960](https://github.com/ScaleLeap/jest-polly/commit/57f8960c835bb41f168deef61b9b4944ff30b6bc))
+* **deps:** update dependency @pollyjs/persister-fs to v4.2.0 ([3b4bebd](https://github.com/ScaleLeap/jest-polly/commit/3b4bebd2caba62bbafe951e6537be7a56ad399b2))
+* moves @scaleleap/config to peer deps ([e98826b](https://github.com/ScaleLeap/jest-polly/commit/e98826b3be33b30c0fb3dc20298b6003206082ec))
+* **deps:** update dependency @scaleleap/config to v1.5.1 ([92b1168](https://github.com/ScaleLeap/jest-polly/commit/92b11684a69dc71487f99a68ae1dd2e4652ddd04))
+
+
+### Features
+
+* converts JSON requests to objects for storage ([e80af32](https://github.com/ScaleLeap/jest-polly/commit/e80af325e53225ca6247e345e2a6b0653def3f4f))
+
 ## [1.3.2](https://github.com/ScaleLeap/jest-polly/compare/v1.3.1...v1.3.2) (2020-04-06)
 
 
