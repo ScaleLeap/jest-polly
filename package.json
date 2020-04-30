@@ -20,7 +20,9 @@
     "clean": "rimraf lib",
     "lint": "npx eslint --ext .js,.ts src/",
     "semantic-release": "semantic-release",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "types": "lib/index.d.ts",
   "dependencies": {
@@ -33,7 +35,8 @@
     "@types/setup-polly-jest": "0.5.0",
     "ci-info": "2.0.0",
     "lodash.merge": "4.6.2",
-    "setup-polly-jest": "0.7.0"
+    "setup-polly-jest": "0.7.0",
+    "snyk": "^1.316.1"
   },
   "peerDependencies": {
     "@scaleleap/config": "1.5.1"
@@ -69,5 +72,6 @@
   },
   "release": {
     "extends": "@scaleleap/semantic-release-config"
-  }
+  },
+  "snyk": true
 }
