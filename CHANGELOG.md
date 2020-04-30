@@ -3,6 +3,13 @@
           All notable changes to this project will be documented in this file.
           See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/ScaleLeap/jest-polly/compare/v1.4.0...v1.4.1) (2020-04-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @pollyjs/adapter-node-http to v4.2.1 ([2d2e3d3](https://github.com/ScaleLeap/jest-polly/commit/2d2e3d33f68adda65af13e31e7a54a3328a40f89))
+
 # [1.4.0](https://github.com/ScaleLeap/jest-polly/compare/v1.3.2...v1.4.0) (2020-04-29)
 
 
