@@ -28,7 +28,7 @@
   "dependencies": {
     "@pollyjs/adapter-node-http": "4.2.1",
     "@pollyjs/core": "4.1.0",
-    "@pollyjs/persister-fs": "4.2.0",
+    "@pollyjs/persister-fs": "4.2.1",
     "@types/pollyjs__adapter-node-http": "2.0.0",
     "@types/pollyjs__core": "4.0.0",
     "@types/pollyjs__persister-fs": "2.0.0",
