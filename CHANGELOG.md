@@ -3,6 +3,16 @@
           All notable changes to this project will be documented in this file.
           See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/ScaleLeap/jest-polly/compare/v1.4.1...v1.4.2) (2020-05-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @pollyjs/persister-fs to v4.2.1 ([358a3d5](https://github.com/ScaleLeap/jest-polly/commit/358a3d56ff954b54aea302f91c0a945929373925))
+* package.json, package-lock.json & .snyk to reduce vulnerabilities ([ca87a1a](https://github.com/ScaleLeap/jest-polly/commit/ca87a1adbc7e8c539bf5d1844bc5e66e198743cd))
+* package.json, package-lock.json & .snyk to reduce vulnerabilities ([6f73706](https://github.com/ScaleLeap/jest-polly/commit/6f737064336e9859be4aa2099beb0b1a36689c1e))
+* package.json, package-lock.json & .snyk to reduce vulnerabilities ([2f25638](https://github.com/ScaleLeap/jest-polly/commit/2f25638bdb1ebb392be247a5db3782063886fd82))
+
 ## [1.4.1](https://github.com/ScaleLeap/jest-polly/compare/v1.4.0...v1.4.1) (2020-04-30)
 
 
