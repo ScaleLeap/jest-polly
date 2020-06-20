@@ -6,15 +6,36 @@ import { dirname, join } from 'path'
 
 import { environment } from './environment'
 
+interface PollyConfigWithSecrets extends PollyConfig {
+  /**
+   * Secrets to filter out before persisting the recording.
+   *
+   * Format:
+   *
+   * ```ts
+   * secrets: {
+   *   'my secret data': 'replace with'
+   * }
+   * ```
+   *
+   * or just use an array of secrets and they will be replaced with "x":
+   *
+   * ```ts
+   * secrets: [process.env.SECRET, 'my secret data', 'another secret']
+   * ```
+   */
+  secrets?: Record<string, string> | (string | undefined)[]
+}
+
 export class JestPollyConfigService {
-  private $config!: PollyConfig
+  private $config!: PollyConfigWithSecrets
 
   /**
    * Factory method is used to invoke config generation, because `global.jasmine` object is
    * only available inside a test or lifecycle methods (before, after).
    */
   // eslint-disable-next-line class-methods-use-this
-  private factory(): PollyConfig {
+  private factory(): PollyConfigWithSecrets {
     const recordingsRoot = dirname(global.jasmine.testPath)
     const recordingsDirectory = join(recordingsRoot, '__recordings__')
 
@@ -48,7 +69,7 @@ export class JestPollyConfigService {
     return this.$config
   }
 
-  set config(config: PollyConfig) {
+  set config(config: PollyConfigWithSecrets) {
     this.init()
     merge(this.$config, config)
   }
