@@ -3,6 +3,21 @@
           All notable changes to this project will be documented in this file.
           See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/ScaleLeap/jest-polly/compare/v1.4.3...v1.5.0) (2020-06-22)
+
+
+### Bug Fixes
+
+* npm audit ([d8769ad](https://github.com/ScaleLeap/jest-polly/commit/d8769ad4f85d299ce0db4b479016ee2ea3c8061f))
+* snyk ([1ce8a36](https://github.com/ScaleLeap/jest-polly/commit/1ce8a3644b2125992fd9535b1e2f0aba5fae965d))
+
+
+### Features
+
+* adds PollyRecording TypeScript interface ([93b5ac8](https://github.com/ScaleLeap/jest-polly/commit/93b5ac85610d2d536b692a2180f310ee04b42219))
+* adds secret replacer feature ([a1c0518](https://github.com/ScaleLeap/jest-polly/commit/a1c051847f4dc17fbf1110935c17c8dd3d7250b9))
+* adds secrets option to config ([6da6274](https://github.com/ScaleLeap/jest-polly/commit/6da6274744947ee34c545737abcd08bfa89b7d2d))
+
 ## [1.4.3](https://github.com/ScaleLeap/jest-polly/compare/v1.4.2...v1.4.3) (2020-05-07)
 
 
