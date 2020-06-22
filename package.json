@@ -20,7 +20,7 @@
     "clean": "rimraf lib",
     "lint": "npx eslint --ext .js,.ts src/",
     "prepare": "npm run snyk-protect",
-    "semantic-release": "semantic-release",
+    "semantic-release": "npx @scaleleap/semantic-release-config",
     "snyk-protect": "snyk protect",
     "test": "jest"
   },
@@ -44,7 +44,6 @@
   },
   "devDependencies": {
     "@scaleleap/config": "1.6.1",
-    "@scaleleap/semantic-release-config": "1.1.9",
     "@scaleleap/utils": "1.6.12",
     "@types/ci-info": "2.0.0",
     "@types/jest": "25.2.1",
