@@ -5,6 +5,7 @@ import { setupPolly } from 'setup-polly-jest'
 
 import { jestPollyConfigService } from './config'
 import { APPLICATION_JSON_MIME } from './constants'
+import type { PollyRecording } from './recording-type'
 import { secretSanitizer } from './secrets-sanitizer'
 
 Polly.register(NodeHttpAdapter)
@@ -19,7 +20,7 @@ function isJsonMime(text: string) {
 Polly.on('create', (polly) => {
   polly.server
     .any()
-    .on('beforePersist', (request, recording) => {
+    .on('beforePersist', (request, recording: PollyRecording) => {
       const { secrets } = jestPollyConfigService.config
 
       if (typeof secrets !== 'undefined') {
@@ -28,7 +29,12 @@ Polly.on('create', (polly) => {
 
       const { content } = recording.response
 
-      if (content && content.mimeType && isJsonMime(content.mimeType)) {
+      if (
+        content &&
+        content.mimeType &&
+        isJsonMime(content.mimeType) &&
+        typeof content.text === 'string'
+      ) {
         try {
           content.text = JSON.parse(content.text)
         } catch (error) {
@@ -38,7 +44,12 @@ Polly.on('create', (polly) => {
 
       const { postData } = recording.request
 
-      if (postData && postData.mimeType && isJsonMime(postData.mimeType)) {
+      if (
+        postData &&
+        postData.mimeType &&
+        isJsonMime(postData.mimeType) &&
+        typeof postData.text === 'string'
+      ) {
         try {
           postData.text = JSON.parse(postData.text)
         } catch (error) {
