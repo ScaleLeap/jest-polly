@@ -12,7 +12,7 @@ Integrate [Jest](https://github.com/facebook/jest) with [PollyJS](https://github
 ## List of features
 
  * Sane default [configuration](./src/config.ts#L16)
- * Secret replacement
+ * Secret Sanitization
  * TypeScript support
 
 ## Environment Variables
@@ -47,6 +47,30 @@ Usage:
 
 ```sh
 POLLY_RECORD_IF_MISSING=true npm t
+```
+
+## Secret Sanitization
+
+Sometimes requests and/or responses may contain secret data, such as API keys, or oAuth tokens.
+
+To automatically sanitize the recordings, you may add a list of secrets to the config to be replaced.
+
+See "Change PollyJS default config" section for details.
+
+```ts
+// use a Record-style config, where keys are secrets,
+// and values are what they will be replaced with
+jestPollyConfigService.config = {
+  secrets: {
+    'somepassword': 'x',
+    'my-api-key': 'x',
+  }
+}
+
+// or simply use an array, and everything will be replaced with `x` by default:
+jestPollyConfigService.config = {
+  secrets: [process.env.MY_SECRET_VALYE]
+}
 ```
 
 ## Code Demo
