@@ -4,7 +4,6 @@
  * There might be things missing.
  */
 
-// eslint-disable-next-line import/no-unresolved
 import { JsonObject } from 'type-fest'
 
 interface NameValuePair extends JsonObject {

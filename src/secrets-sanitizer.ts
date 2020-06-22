@@ -1,5 +1,4 @@
 import merge from 'lodash.merge'
-// eslint-disable-next-line import/no-unresolved
 import { JsonObject } from 'type-fest'
 
 import { Secrets } from './config'
