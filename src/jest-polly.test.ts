@@ -8,7 +8,19 @@ import fetch from 'node-fetch'
 import { jestPollyConfigService } from './config'
 import { APPLICATION_JSON_MIME } from './constants'
 
+const SECRET_VALUE = 'foobarbaz'
+const SECRET_REPLACER = 'x'
+
+const createPayload = (value: string) =>
+  JSON.stringify({
+    foo: 'bar',
+    bar: `some secret here: ${value}`,
+  })
+
 jestPollyConfigService.config = {
+  secrets: {
+    [SECRET_VALUE]: SECRET_REPLACER,
+  },
   matchRequestsBy: {
     order: false,
   },
@@ -146,5 +158,26 @@ describe('jest-polly', () => {
     const message = await postMessage()
 
     expect(message).toStrictEqual({})
+  })
+
+  it('replaces secrets in the recording', async () => {
+    expect.assertions(1)
+
+    const RESPONSE = createPayload(SECRET_VALUE)
+
+    const server = await createServer(RESPONSE, APPLICATION_JSON_MIME)
+
+    // Records if missing
+    await fetchMessage()
+
+    // Go offline
+    await destroyServer(server)
+
+    // Replays recording
+    const message = await fetchMessage()
+
+    // need to JSON.parse again, because the keys change order and it fails equality
+    // and the value is a JSON string, not an Object
+    expect(JSON.parse(message)).toStrictEqual(JSON.parse(createPayload(SECRET_REPLACER)))
   })
 })

@@ -9,14 +9,15 @@
 
 Integrate [Jest](https://github.com/facebook/jest) with [PollyJS](https://github.com/Netflix/pollyjs/) for a smooth HTTP recording and playback experience for your integration tests.
 
-### List of features
+## List of features
 
  * Sane default [configuration](./src/config.ts#L16)
+ * Secret Sanitization
  * TypeScript support
 
-### Environment Variables
+## Environment Variables
 
-#### [Polly Mode](https://netflix.github.io/pollyjs/#/configuration?id=mode)
+### [Polly Mode](https://netflix.github.io/pollyjs/#/configuration?id=mode)
 
 Can be set via `POLLY_MODE` environment variable.
 
@@ -34,7 +35,7 @@ Usage:
 POLLY_MODE=record npm t
 ```
 
-#### [Record if Missing](https://netflix.github.io/pollyjs/#/configuration?id=recordifmissing)
+### [Record if Missing](https://netflix.github.io/pollyjs/#/configuration?id=recordifmissing)
 
 If a request's recording is not found, pass-through to the server and record the response.
 
@@ -48,9 +49,33 @@ Usage:
 POLLY_RECORD_IF_MISSING=true npm t
 ```
 
-### Code Demo
+## Secret Sanitization
 
-#### Use in all tests
+Sometimes requests and/or responses may contain secret data, such as API keys, or oAuth tokens.
+
+To automatically sanitize the recordings, you may add a list of secrets to the config to be replaced.
+
+See "Change PollyJS default config" section for details.
+
+```ts
+// use a Record-style config, where keys are secrets,
+// and values are what they will be replaced with
+jestPollyConfigService.config = {
+  secrets: {
+    'somepassword': 'x',
+    'my-api-key': 'x',
+  }
+}
+
+// or simply use an array, and everything will be replaced with `x` by default:
+jestPollyConfigService.config = {
+  secrets: [process.env.MY_SECRET_VALYE]
+}
+```
+
+## Code Demo
+
+### Use in all tests
 
 In your `package.json`
 
@@ -70,7 +95,7 @@ module.exports = {
 };
 ```
 
-#### Use in a single test
+### Use in a single test
 
 In `my.test.js`
 
@@ -84,7 +109,7 @@ test('is ok', async () => {
 });
 ```
 
-#### Using the Polly instance
+### Using the Polly instance
 
 Use the [`polly` instance](https://netflix.github.io/pollyjs/#/api) to change default behavior.
 
@@ -104,7 +129,7 @@ test('is not ok', async () => {
 });
 ```
 
-#### Change PollyJS default config
+### Change PollyJS default config
 
 If you want to change the [default config](./src/config.ts#L16), use the following setter.
 
@@ -120,22 +145,22 @@ jestPollyConfigService.config = {
 }
 ```
 
-### Download & Installation
+## Download & Installation
 
 ```sh
 $ npm i @scaleleap/jest-polly
 ```
 
-### Contributing
+## Contributing
 
 Keep it simple. Keep it minimal. Don't put every single feature just because you can.
 
-### Authors or Acknowledgments
+## Authors or Acknowledgments
 
 * Authored by Roman Filippov ([Scale Leap](https://www.scaleleap.com))
 * Inspired by [`@spotify/polly-jest-presets`](https://github.com/spotify/polly-jest-presets), but the project wasn't well maintained
 * Inspired by [`@jomaxx/jest-polly`](https://github.com/jomaxx/jest-polly), but wasn't using `setup-polly-jest`
 
-### License
+## License
 
 This project is licensed under the MIT License
