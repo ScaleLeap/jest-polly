@@ -27,7 +27,7 @@ export function normalizeSecrets(secrets: Secrets): NormalizedSecrets {
   }, {})
 }
 
-export function replace(recording: JsonObject, secrets: NormalizedSecrets) {
+export function sanitize(recording: JsonObject, secrets: NormalizedSecrets) {
   return Object.keys(recording).reduce((accumulator, key) => {
     const value = accumulator[key]
 
@@ -36,13 +36,13 @@ export function replace(recording: JsonObject, secrets: NormalizedSecrets) {
     }
 
     if (typeof value === 'object' && !Array.isArray(value) && value !== null) {
-      accumulator[key] = replace(value, secrets)
+      accumulator[key] = sanitize(value, secrets)
     }
 
     return accumulator
   }, recording)
 }
 
-export function secretReplacer(recording: JsonObject, secrets: Secrets) {
-  return replace(merge({}, recording), normalizeSecrets(secrets))
+export function secretSanitizer(recording: JsonObject, secrets: Secrets) {
+  return sanitize(merge({}, recording), normalizeSecrets(secrets))
 }

@@ -1,4 +1,4 @@
-import { normalizeSecrets, replaceAll, secretReplacer } from './secrets-replacer'
+import { normalizeSecrets, replaceAll, secretSanitizer } from './secrets-sanitizer'
 
 describe('secrets', () => {
   describe(`${replaceAll.name}`, () => {
@@ -50,7 +50,7 @@ describe('secrets', () => {
     })
   })
 
-  describe(`${secretReplacer.name}`, () => {
+  describe(`${secretSanitizer.name}`, () => {
     it('should replace all secrets and leave other params', () => {
       expect.assertions(1)
 
@@ -72,7 +72,7 @@ describe('secrets', () => {
         array: [{}],
       }
 
-      expect(secretReplacer(recording, secrets)).toMatchSnapshot()
+      expect(secretSanitizer(recording, secrets)).toMatchSnapshot()
     })
   })
 })

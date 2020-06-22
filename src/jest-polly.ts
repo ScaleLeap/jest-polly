@@ -5,7 +5,7 @@ import { setupPolly } from 'setup-polly-jest'
 
 import { jestPollyConfigService } from './config'
 import { APPLICATION_JSON_MIME } from './constants'
-import { secretReplacer } from './secrets-replacer'
+import { secretSanitizer } from './secrets-sanitizer'
 
 Polly.register(NodeHttpAdapter)
 Polly.register(FSPersister)
@@ -23,7 +23,7 @@ Polly.on('create', (polly) => {
       const { secrets } = jestPollyConfigService.config
 
       if (typeof secrets !== 'undefined') {
-        Object.assign(recording, secretReplacer(recording, secrets))
+        Object.assign(recording, secretSanitizer(recording, secrets))
       }
 
       const { content } = recording.response
