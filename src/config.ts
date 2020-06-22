@@ -6,6 +6,8 @@ import { dirname, join } from 'path'
 
 import { environment } from './environment'
 
+export type Secrets = Record<string, string> | (string | undefined)[]
+
 interface PollyConfigWithSecrets extends PollyConfig {
   /**
    * Secrets to filter out before persisting the recording.
@@ -24,7 +26,7 @@ interface PollyConfigWithSecrets extends PollyConfig {
    * secrets: [process.env.SECRET, 'my secret data', 'another secret']
    * ```
    */
-  secrets?: Record<string, string> | (string | undefined)[]
+  secrets?: Secrets
 }
 
 export class JestPollyConfigService {
