@@ -40,10 +40,10 @@
     "type-fest": "0.16.0"
   },
   "peerDependencies": {
-    "@scaleleap/config": "1.6.1"
+    "@scaleleap/config": "2.0.2"
   },
   "devDependencies": {
-    "@scaleleap/config": "2.0.1",
+    "@scaleleap/config": "2.0.2",
     "@scaleleap/utils": "1.7.6",
     "@types/ci-info": "2.0.0",
     "@types/jest": "26.0.3",
