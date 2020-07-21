@@ -38,6 +38,18 @@ export function sanitize(recording: JsonObject, secrets: NormalizedSecrets) {
       accumulator[key] = sanitize(value, secrets)
     }
 
+    if (Array.isArray(value)) {
+      value.forEach((value_, i) => {
+        if (typeof value_ === 'string') {
+          value[i] = replaceAll(value_, secrets)
+        }
+
+        if (typeof value_ === 'object' && !Array.isArray(value_) && value_ !== null) {
+          value[i] = sanitize(value_, secrets)
+        }
+      })
+    }
+
     return accumulator
   }, recording)
 }

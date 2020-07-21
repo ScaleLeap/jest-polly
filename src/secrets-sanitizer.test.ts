@@ -51,13 +51,13 @@ describe('secrets', () => {
   })
 
   describe(`${secretSanitizer.name}`, () => {
+    const secrets = {
+      iamasecret: 'x',
+      anothersecret: 'x',
+    }
+
     it('should replace all secrets and leave other params', () => {
       expect.assertions(1)
-
-      const secrets = {
-        iamasecret: 'x',
-        anothersecret: 'x',
-      }
 
       const recording = {
         foo: '1 iamasecret 1',
@@ -69,7 +69,13 @@ describe('secrets', () => {
             val: '1 anothersecret 1 anothersecret x',
           },
         },
-        array: [{}],
+        array: [
+          {
+            name: 'foo',
+            value: 'iamasecret',
+          },
+        ],
+        arrayOfStrings: ['iamasecret', 'y'],
       }
 
       expect(secretSanitizer(recording, secrets)).toMatchSnapshot()
