@@ -3,6 +3,14 @@
           All notable changes to this project will be documented in this file.
           See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.3](https://github.com/ScaleLeap/jest-polly/compare/v1.5.2...v1.5.3) (2020-07-21)
+
+
+### Bug Fixes
+
+* npm audit ([8b5de4a](https://github.com/ScaleLeap/jest-polly/commit/8b5de4a4469a5d59cd35ac53a4b8383febd0ebab))
+* secret replacement inside arrays ([feb9aea](https://github.com/ScaleLeap/jest-polly/commit/feb9aea9b033967d136519023cd50778d7a0ab3f))
+
 ## [1.5.2](https://github.com/ScaleLeap/jest-polly/compare/v1.5.1...v1.5.2) (2020-06-29)
 
 
