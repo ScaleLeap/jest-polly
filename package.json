@@ -46,7 +46,7 @@
     "@scaleleap/config": "2.0.3",
     "@scaleleap/utils": "1.8.10",
     "@types/ci-info": "2.0.0",
-    "@types/jest": "26.0.8",
+    "@types/jest": "26.0.12",
     "@types/lodash.merge": "4.6.6",
     "@types/node": "13.13.4",
     "@types/node-fetch": "2.5.7",
