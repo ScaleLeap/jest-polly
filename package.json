@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@scaleleap/config": "2.0.3",
-    "@scaleleap/utils": "1.8.11",
+    "@scaleleap/utils": "1.8.12",
     "@types/ci-info": "2.0.0",
     "@types/jest": "26.0.12",
     "@types/lodash.merge": "4.6.6",
