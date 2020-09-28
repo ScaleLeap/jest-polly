@@ -3,6 +3,13 @@
           All notable changes to this project will be documented in this file.
           See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.6](https://github.com/ScaleLeap/jest-polly/compare/v1.5.5...v1.5.6) (2020-09-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/pollyjs__persister-fs to v2.0.1 ([67d4fe4](https://github.com/ScaleLeap/jest-polly/commit/67d4fe445689424e514e1960631cf4e96eb2b9c6))
+
 ## [1.5.5](https://github.com/ScaleLeap/jest-polly/compare/v1.5.4...v1.5.5) (2020-09-28)
 
 
