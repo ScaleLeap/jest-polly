@@ -37,7 +37,7 @@
     "lodash.merge": "4.6.2",
     "setup-polly-jest": "0.9.1",
     "snyk": "^1.316.1",
-    "type-fest": "0.16.0"
+    "type-fest": "0.17.0"
   },
   "peerDependencies": {
     "@scaleleap/config": "2.0.4"
