@@ -1,19 +1,19 @@
-![](https://raw.githubusercontent.com/ScaleLeap/jest-polly/master/docs/assets/logo.png)
+# @scaleleap/jest-polly
 
-@scaleleap/jest-polly
-=======================================
+![logo](https://raw.githubusercontent.com/ScaleLeap/jest-polly/master/docs/assets/logo.png)
 
 > Smoothest Jest integration with PollyJS.
 
 * * *
 
-Integrate [Jest](https://github.com/facebook/jest) with [PollyJS](https://github.com/Netflix/pollyjs/) for a smooth HTTP recording and playback experience for your integration tests.
+Integrate [Jest](https://github.com/facebook/jest) with [PollyJS](https://github.com/Netflix/pollyjs/)
+for a smooth HTTP recording and playback experience for your integration tests.
 
 ## List of features
 
- * Sane default [configuration](./src/config.ts#L16)
- * Secret Sanitization
- * TypeScript support
+* Sane default [configuration](./src/config.ts#L16)
+* Secret Sanitization
+* TypeScript support
 
 ## Environment Variables
 
@@ -23,9 +23,9 @@ Can be set via `POLLY_MODE` environment variable.
 
 Mode can be one of the following:
 
- * `replay`: Replay responses from recordings.
- * `record`: Force Polly to record all requests. This will overwrite recordings that already exist.
- * `passthrough`: Passes all requests through directly to the server without recording or replaying.
+* `replay`: Replay responses from recordings.
+* `record`: Force Polly to record all requests. This will overwrite recordings that already exist.
+* `passthrough`: Passes all requests through directly to the server without recording or replaying.
 
 **Default**: `replay`
 
@@ -148,7 +148,7 @@ jestPollyConfigService.config = {
 ## Download & Installation
 
 ```sh
-$ npm i @scaleleap/jest-polly
+npm i -D @scaleleap/jest-polly
 ```
 
 ## Contributing
@@ -158,7 +158,8 @@ Keep it simple. Keep it minimal. Don't put every single feature just because you
 ## Authors or Acknowledgments
 
 * Authored by Roman Filippov ([Scale Leap](https://www.scaleleap.com))
-* Inspired by [`@spotify/polly-jest-presets`](https://github.com/spotify/polly-jest-presets), but the project wasn't well maintained
+* Inspired by [`@spotify/polly-jest-presets`](https://github.com/spotify/polly-jest-presets),
+  but the project wasn't well maintained
 * Inspired by [`@jomaxx/jest-polly`](https://github.com/jomaxx/jest-polly), but wasn't using `setup-polly-jest`
 
 ## License
