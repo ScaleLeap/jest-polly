@@ -4,7 +4,7 @@ import FSPersister from '@pollyjs/persister-fs'
 import merge from 'lodash.merge'
 import { dirname, join } from 'path'
 
-import { environment } from './environment'
+import { POLLY_MODE, POLLY_RECORD_IF_MISSING } from './environment'
 
 export type Secrets = Record<string, string> | (string | undefined)[]
 
@@ -50,8 +50,8 @@ export class JestPollyConfigService {
           recordingsDir: recordingsDirectory,
         },
       },
-      mode: environment.POLLY_MODE,
-      recordIfMissing: environment.POLLY_RECORD_IF_MISSING,
+      mode: POLLY_MODE,
+      recordIfMissing: POLLY_RECORD_IF_MISSING,
       recordFailedRequests: true,
       matchRequestsBy: {
         headers: false,

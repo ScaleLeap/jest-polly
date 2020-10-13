@@ -1,15 +1,11 @@
 import { MODE } from '@pollyjs/core'
-import { BaseConfig } from '@scaleleap/config'
 import { isCI } from 'ci-info'
+import { get } from 'env-var'
 
 const POLLY_MODES: MODE[] = ['replay', 'record', 'passthrough', 'stopped']
 
-class Config extends BaseConfig {
-  readonly POLLY_MODE = this.get('POLLY_MODE').default(POLLY_MODES[0]).asEnum<MODE>(POLLY_MODES)
+export const POLLY_MODE = get('POLLY_MODE').default(POLLY_MODES[0]).asEnum<MODE>(POLLY_MODES)
 
-  readonly POLLY_RECORD_IF_MISSING = this.get('POLLY_RECORD_IF_MISSING')
-    .default(isCI ? 'false' : 'true')
-    .asBoolStrict()
-}
-
-export const environment = new Config()
+export const POLLY_RECORD_IF_MISSING = get('POLLY_RECORD_IF_MISSING')
+  .default(isCI ? 'false' : 'true')
+  .asBoolStrict()
