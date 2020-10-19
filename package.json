@@ -38,7 +38,7 @@
     "type-fest": "0.18.0"
   },
   "devDependencies": {
-    "@scaleleap/utils": "1.8.21",
+    "@scaleleap/utils": "1.8.22",
     "@types/ci-info": "2.0.0",
     "@types/jest": "26.0.14",
     "@types/lodash.merge": "4.6.6",
