@@ -35,7 +35,7 @@
     "env-var": "6.3.0",
     "lodash.merge": "4.6.2",
     "setup-polly-jest": "0.9.1",
-    "type-fest": "0.18.1"
+    "type-fest": "0.19.0"
   },
   "devDependencies": {
     "@scaleleap/utils": "1.8.23",
