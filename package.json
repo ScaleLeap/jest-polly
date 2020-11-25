@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git@github.com:ScaleLeap/jest-polly.git"
   },
-  "version": "1.5.13",
+  "version": "1.5.14",
   "main": "lib/index.js",
   "scripts": {
     "prebuild": "npm run clean",
