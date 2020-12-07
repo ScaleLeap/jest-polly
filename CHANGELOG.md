@@ -3,6 +3,13 @@
           All notable changes to this project will be documented in this file.
           See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.16](https://github.com/ScaleLeap/jest-polly/compare/v1.5.15...v1.5.16) (2020-12-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @pollyjs/adapter-node-http to v5.0.2 ([be82b90](https://github.com/ScaleLeap/jest-polly/commit/be82b907d9aa2b0ce7e8bbba201f780630fdf510))
+
 ## [1.5.15](https://github.com/ScaleLeap/jest-polly/compare/v1.5.14...v1.5.15) (2020-11-27)
 
 
