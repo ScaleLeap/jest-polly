@@ -45,9 +45,7 @@ const createServer = (response: string, contentType = 'text/plain') =>
   })
 
 const destroyServer = (server: Server) =>
-  new Promise((resolve, reject) => {
-    return server.close().once('error', reject).once('close', resolve)
-  })
+  new Promise((resolve, reject) => server.close().once('error', reject).once('close', resolve))
 
 async function fetchMessage() {
   const response = await fetch('http://localhost:8080')
