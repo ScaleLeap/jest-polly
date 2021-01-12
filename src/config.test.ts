@@ -1,7 +1,7 @@
 import './jest-polly'
 
 import fetch from 'node-fetch'
-import { resolve } from 'path'
+import path from 'path'
 
 import { JestPollyConfigService, jestPollyConfigService } from './config'
 
@@ -41,7 +41,7 @@ describe(`${JestPollyConfigService.name}`, () => {
     jestPollyConfigService.config = {
       persisterOptions: {
         fs: {
-          recordingsDir: resolve(__dirname, '__foo__'),
+          recordingsDir: path.resolve(__dirname, '__foo__'),
         },
       },
     }

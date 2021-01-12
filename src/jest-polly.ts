@@ -37,7 +37,7 @@ Polly.on('create', (polly) => {
       ) {
         try {
           content.text = JSON.parse(content.text)
-        } catch (error) {
+        } catch {
           // noop
         }
       }
@@ -52,7 +52,7 @@ Polly.on('create', (polly) => {
       ) {
         try {
           postData.text = JSON.parse(postData.text)
-        } catch (error) {
+        } catch {
           // noop
         }
       }
@@ -66,7 +66,7 @@ Polly.on('create', (polly) => {
           if (content && content.text && typeof content.text !== 'string') {
             content.text = JSON.stringify(content.text)
           }
-        } catch (error) {
+        } catch {
           // noop
         }
       }
@@ -79,7 +79,7 @@ Polly.on('create', (polly) => {
           if (postData && postData.text && typeof postData.text !== 'string') {
             postData.text = JSON.stringify(postData.text)
           }
-        } catch (error) {
+        } catch {
           // noop
         }
       }

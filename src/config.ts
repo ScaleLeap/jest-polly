@@ -2,7 +2,7 @@ import NodeHttpAdapter from '@pollyjs/adapter-node-http'
 import { PollyConfig } from '@pollyjs/core'
 import FSPersister from '@pollyjs/persister-fs'
 import merge from 'lodash.merge'
-import { dirname, join } from 'path'
+import path from 'path'
 
 import { POLLY_MODE, POLLY_RECORD_IF_MISSING } from './environment'
 
@@ -38,8 +38,8 @@ export class JestPollyConfigService {
    */
   // eslint-disable-next-line class-methods-use-this
   private factory(): PollyConfigWithSecrets {
-    const recordingsRoot = dirname(global.jasmine.testPath)
-    const recordingsDirectory = join(recordingsRoot, '__recordings__')
+    const recordingsRoot = path.dirname(global.jasmine.testPath)
+    const recordingsDirectory = path.join(recordingsRoot, '__recordings__')
 
     return {
       adapters: [NodeHttpAdapter],
@@ -66,7 +66,7 @@ export class JestPollyConfigService {
     }
   }
 
-  get config() {
+  get config(): PollyConfigWithSecrets {
     this.init()
     return this.$config
   }
