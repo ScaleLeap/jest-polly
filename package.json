@@ -31,7 +31,7 @@
     "@types/pollyjs__core": "4.3.2",
     "@types/pollyjs__persister-fs": "2.0.1",
     "@types/setup-polly-jest": "0.5.1",
-    "ci-info": "2.0.0",
+    "ci-info": "3.0.0",
     "env-var": "7.0.0",
     "lodash.merge": "4.6.2",
     "setup-polly-jest": "0.9.1",
