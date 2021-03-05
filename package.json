@@ -49,7 +49,7 @@
     "rimraf": "3.0.2",
     "ts-jest": "26.5.2",
     "tsconfigs": "4.0.2",
-    "typescript": "4.2.2"
+    "typescript": "4.2.3"
   },
   "keywords": [
     "fetch",
