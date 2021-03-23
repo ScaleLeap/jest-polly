@@ -36,7 +36,7 @@
     "lodash.merge": "4.6.2",
     "setup-polly-jest": "0.9.1",
     "ts-is-present": "1.2.1",
-    "type-fest": "0.21.3"
+    "type-fest": "1.0.1"
   },
   "devDependencies": {
     "@scaleleap/utils": "1.8.61",
