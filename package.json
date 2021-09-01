@@ -34,7 +34,7 @@
     "ci-info": "3.2.0",
     "env-var": "7.0.1",
     "lodash.merge": "4.6.2",
-    "setup-polly-jest": "0.9.1",
+    "setup-polly-jest": "0.10.0",
     "ts-is-present": "1.2.1",
     "type-fest": "2.1.0"
   },
