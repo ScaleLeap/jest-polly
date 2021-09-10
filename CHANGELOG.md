@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.47](https://github.com/ScaleLeap/jest-polly/compare/v1.5.46...v1.5.47) (2021-09-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ts-is-present to v1.2.2 ([c654134](https://github.com/ScaleLeap/jest-polly/commit/c6541345a82897c2c03013b7e2f8aa0a4952f09b))
+
 ## [1.5.46](https://github.com/ScaleLeap/jest-polly/compare/v1.5.45...v1.5.46) (2021-09-06)
 
 
