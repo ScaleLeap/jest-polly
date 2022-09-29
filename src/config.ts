@@ -32,13 +32,9 @@ interface PollyConfigWithSecrets extends PollyConfig {
 export class JestPollyConfigService {
   private $config!: PollyConfigWithSecrets
 
-  /**
-   * Factory method is used to invoke config generation, because `global.jasmine` object is
-   * only available inside a test or lifecycle methods (before, after).
-   */
   // eslint-disable-next-line class-methods-use-this
   private factory(): PollyConfigWithSecrets {
-    const recordingsRoot = path.dirname(global.jasmine.testPath)
+    const recordingsRoot = path.dirname(expect.getState().testPath)
     const recordingsDirectory = path.join(recordingsRoot, '__recordings__')
 
     return {
