@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.62](https://github.com/ScaleLeap/jest-polly/compare/v1.5.61...v1.5.62) (2022-09-29)
+
+
+### Bug Fixes
+
+* **deps:** update pollyjs monorepo to v6 ([#264](https://github.com/ScaleLeap/jest-polly/issues/264)) ([b4f4529](https://github.com/ScaleLeap/jest-polly/commit/b4f4529bab2209f2581d3b2ce04ffc773de7373a))
+
 ## [1.5.61](https://github.com/ScaleLeap/jest-polly/compare/v1.5.60...v1.5.61) (2021-12-01)
 
 
