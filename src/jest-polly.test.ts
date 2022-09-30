@@ -105,7 +105,7 @@ describe('jest-polly', () => {
     expect(message).toBe(RESPONSE)
   })
 
-  // eslint-disable-next-line sonarjs/no-identical-functions
+  // eslint-disable-next-line radar/no-identical-functions
   it('does not expand previously stringified JSON response', async () => {
     expect.assertions(1)
 
@@ -141,7 +141,7 @@ describe('jest-polly', () => {
     expect(message).toStrictEqual({})
   })
 
-  // eslint-disable-next-line sonarjs/no-identical-functions
+  // eslint-disable-next-line radar/no-identical-functions
   it('expands JSON request to JSON object', async () => {
     expect.assertions(1)
 
