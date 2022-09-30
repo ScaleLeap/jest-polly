@@ -34,7 +34,7 @@ export class JestPollyConfigService {
 
   // eslint-disable-next-line class-methods-use-this
   private factory(): PollyConfigWithSecrets {
-    const recordingsRoot = path.dirname(expect.getState().testPath)
+    const recordingsRoot = path.dirname(expect.getState().testPath ?? '.')
     const recordingsDirectory = path.join(recordingsRoot, '__recordings__')
 
     return {

@@ -1,3 +1,4 @@
+/** @jest-environment setup-polly-jest/jest-environment-node */
 import { Polly } from '@pollyjs/core'
 
 import { jestPollyConfigService, jestPollyContext } from '.'

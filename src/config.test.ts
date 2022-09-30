@@ -1,3 +1,4 @@
+/** @jest-environment setup-polly-jest/jest-environment-node */
 import './jest-polly'
 
 import fetch from 'node-fetch'

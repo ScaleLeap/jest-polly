@@ -1,3 +1,4 @@
+/** @jest-environment setup-polly-jest/jest-environment-node */
 // Disable order checking for tests, so that the second
 // request has a chance to match against the first request
 import './jest-polly'
