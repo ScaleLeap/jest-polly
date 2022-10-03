@@ -15,10 +15,23 @@ function isJsonMime(text: string) {
   return text.includes(APPLICATION_JSON_MIME)
 }
 
-// converts JSON responses from text to JSON objects
-// See: https://github.com/Netflix/pollyjs/issues/322
-Polly.on('create', (polly) => {
-  polly.server
+// We have to define our own "Context" here, and can't re-use types from
+// "@types/setup-polly-jest" package, because, for some reason, there is a problem with
+// exporting the type and when importing @scaleleap/jest-polly in consuming modules,
+// the result is typed as "any"
+export interface JestPollyContext {
+  readonly polly: Polly
+}
+
+// first we instantiate a Polly instance with default configuration
+export const jestPollyContext: JestPollyContext = setupPolly()
+
+// and then before each test run, we'll update it with actual configuration, because
+// some of the configuration, depends on being inside a test
+// eslint-disable-next-line jest/require-top-level-describe
+beforeEach(() => {
+  jestPollyContext.polly.configure(jestPollyConfigService.config)
+  jestPollyContext.polly.server
     .any()
     .on('beforePersist', (request, recording: PollyRecording) => {
       const { secrets } = jestPollyConfigService.config
@@ -85,22 +98,6 @@ Polly.on('create', (polly) => {
       }
     })
 })
-
-// We have to define our own "Context" here, and can't re-use types from
-// "@types/setup-polly-jest" package, because, for some reason, there is a problem with
-// exporting the type and when importing @scaleleap/jest-polly in consuming modules,
-// the result is typed as "any"
-export interface JestPollyContext {
-  readonly polly: Polly
-}
-
-// first we instantiate a Polly instance with default configuration
-export const jestPollyContext: JestPollyContext = setupPolly()
-
-// and then before each test run, we'll update it with actual configuration, because
-// some of the configuration, depends on being inside a test
-// eslint-disable-next-line jest/require-top-level-describe
-beforeEach(() => jestPollyContext.polly.configure(jestPollyConfigService.config))
 
 // eslint-disable-next-line jest/require-top-level-describe
 afterEach(() => jestPollyContext.polly.flush())
