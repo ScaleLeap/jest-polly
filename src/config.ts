@@ -2,7 +2,7 @@ import NodeHttpAdapter from '@pollyjs/adapter-node-http'
 import { PollyConfig } from '@pollyjs/core'
 import FSPersister from '@pollyjs/persister-fs'
 import merge from 'lodash.merge'
-import path from 'path'
+import path from 'node:path'
 
 import { POLLY_MODE, POLLY_RECORD_IF_MISSING } from './environment'
 

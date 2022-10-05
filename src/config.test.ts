@@ -1,8 +1,8 @@
 /** @jest-environment setup-polly-jest/jest-environment-node */
 import './jest-polly'
 
+import path from 'node:path'
 import fetch from 'node-fetch'
-import path from 'path'
 
 import { JestPollyConfigService, jestPollyConfigService } from './config'
 
@@ -31,7 +31,7 @@ describe(`${JestPollyConfigService.name}`, () => {
       },
     }
 
-    expect(svc.config.recordFailedRequests).not.toBeUndefined()
+    expect(svc.config.recordFailedRequests).toBeDefined()
     expect(svc.config.matchRequestsBy && svc.config.matchRequestsBy.order).toBe(false)
     expect(svc.config.matchRequestsBy && svc.config.matchRequestsBy.headers).toBe(false)
   })
