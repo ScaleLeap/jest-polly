@@ -3,7 +3,7 @@
 // request has a chance to match against the first request
 import './jest-polly'
 
-import http from 'http'
+import http from 'node:http'
 import fetch from 'node-fetch'
 
 import { jestPollyConfigService } from './config'
