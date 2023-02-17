@@ -34,6 +34,9 @@ export function normalizeSecrets(secrets: Secrets): NormalizedSecrets {
   return normalizedSecrets
 }
 
+const isObject = (input: unknown): input is JsonObject =>
+  typeof input === 'object' && input !== null && !Array.isArray(input)
+
 // eslint-disable-next-line radar/cognitive-complexity
 export function sanitize(recording: JsonObject, secrets: NormalizedSecrets): JsonObject {
   const accumulator: JsonObject = merge({}, recording)
@@ -45,7 +48,7 @@ export function sanitize(recording: JsonObject, secrets: NormalizedSecrets): Jso
       accumulator[key] = replaceAll(value, secrets)
     }
 
-    if (typeof value === 'object' && !Array.isArray(value) && value !== null) {
+    if (isObject(value)) {
       accumulator[key] = sanitize(value, secrets)
     }
 
@@ -55,7 +58,7 @@ export function sanitize(recording: JsonObject, secrets: NormalizedSecrets): Jso
           value[index] = replaceAll(value_, secrets)
         }
 
-        if (typeof value_ === 'object' && !Array.isArray(value_) && value_ !== null) {
+        if (isObject(value_)) {
           value[index] = sanitize(value_, secrets)
         }
       }
