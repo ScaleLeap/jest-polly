@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.82](https://github.com/ScaleLeap/jest-polly/compare/v1.5.81...v1.5.82) (2023-02-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency type-fest to v3.6.1 ([50f2b64](https://github.com/ScaleLeap/jest-polly/commit/50f2b646da45573ba5d7ad62872f25628c3c89cb))
+
 ## [1.5.81](https://github.com/ScaleLeap/jest-polly/compare/v1.5.80...v1.5.81) (2023-02-17)
 
 
