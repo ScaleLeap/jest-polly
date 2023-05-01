@@ -41,7 +41,7 @@
   "devDependencies": {
     "@types/jest": "29.5.1",
     "@types/lodash.merge": "4.6.7",
-    "@types/node": "18.15.11",
+    "@types/node": "18.16.3",
     "@types/node-fetch": "2.6.3",
     "@scaleleap/utils": "1.9.98",
     "jest": "29.5.0",
