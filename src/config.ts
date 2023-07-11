@@ -1,3 +1,4 @@
+import FetchAdapter from '@pollyjs/adapter-fetch'
 import NodeHttpAdapter from '@pollyjs/adapter-node-http'
 import { PollyConfig } from '@pollyjs/core'
 import FSPersister from '@pollyjs/persister-fs'
@@ -38,7 +39,7 @@ export class JestPollyConfigService {
     const recordingsDirectory = path.join(recordingsRoot, '__recordings__')
 
     return {
-      adapters: [NodeHttpAdapter],
+      adapters: [FetchAdapter],
       persister: FSPersister,
       persisterOptions: {
         keepUnusedRequests: false,

@@ -4,10 +4,13 @@
 import './jest-polly'
 
 import http from 'node:http'
-import fetch from 'node-fetch'
 
 import { jestPollyConfigService } from './config'
 import { APPLICATION_JSON_MIME } from './constants'
+// import fetch from 'node-fetch'
+
+// @ts-ignore
+const { fetch } = global
 
 const SECRET_VALUE = 'foobarbaz'
 const SECRET_REPLACER = 'x'
