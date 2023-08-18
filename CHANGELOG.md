@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/ScaleLeap/jest-polly/compare/v1.5.95...v1.6.0) (2023-08-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency type-fest to v4 ([#385](https://github.com/ScaleLeap/jest-polly/issues/385)) ([2368704](https://github.com/ScaleLeap/jest-polly/commit/236870450a4dfcd40ce60f093f37ea9d90a45ea3))
+
+
+### Features
+
+* removes DefinitelyTyped types in favor of packaged types ([#388](https://github.com/ScaleLeap/jest-polly/issues/388)) ([9164b50](https://github.com/ScaleLeap/jest-polly/commit/9164b50fb0f82f530087b8523e0d6506c209258e))
+
 ## [1.5.95](https://github.com/ScaleLeap/jest-polly/compare/v1.5.94...v1.5.95) (2023-07-20)
 
 
