@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.3](https://github.com/ScaleLeap/jest-polly/compare/v1.6.2...v1.6.3) (2023-08-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency env-var to v7.4.1 ([c616f5d](https://github.com/ScaleLeap/jest-polly/commit/c616f5d5f95e572184dca4f5253e1b696ad49312))
+
 ## [1.6.2](https://github.com/ScaleLeap/jest-polly/compare/v1.6.1...v1.6.2) (2023-08-28)
 
 
