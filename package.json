@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@types/jest": "29.5.5",
-    "@types/lodash.merge": "4.6.7",
+    "@types/lodash.merge": "4.6.8",
     "@types/node": "18.18.1",
     "@types/node-fetch": "2.6.6",
     "@types/setup-polly-jest": "0.5.3",
