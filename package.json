@@ -35,7 +35,7 @@
     "type-fest": "4.6.0"
   },
   "devDependencies": {
-    "@types/jest": "29.5.5",
+    "@types/jest": "29.5.7",
     "@types/lodash.merge": "4.6.8",
     "@types/node": "18.18.1",
     "@types/node-fetch": "2.6.8",
