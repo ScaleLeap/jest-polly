@@ -39,7 +39,7 @@
     "@types/lodash.merge": "4.6.9",
     "@types/node": "18.18.8",
     "@types/node-fetch": "2.6.9",
-    "@types/setup-polly-jest": "0.5.4",
+    "@types/setup-polly-jest": "0.5.5",
     "@scaleleap/utils": "1.9.98",
     "jest": "29.7.0",
     "node-fetch": "2.7.0",
