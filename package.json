@@ -43,7 +43,7 @@
     "@scaleleap/utils": "1.9.98",
     "jest": "29.7.0",
     "node-fetch": "2.7.0",
-    "rimraf": "5.0.10",
+    "rimraf": "6.0.1",
     "ts-jest": "29.1.5",
     "tsconfigs": "4.0.2",
     "typescript": "5.5.4"
