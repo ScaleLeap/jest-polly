@@ -27,7 +27,7 @@
     "@pollyjs/adapter-node-http": "6.0.6",
     "@pollyjs/core": "6.0.6",
     "@pollyjs/persister-fs": "6.0.6",
-    "ci-info": "3.9.0",
+    "ci-info": "4.2.0",
     "env-var": "7.5.0",
     "lodash.merge": "4.6.2",
     "setup-polly-jest": "0.11.0",
